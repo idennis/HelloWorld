@@ -10,6 +10,9 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *testLabel;
+@property (weak, nonatomic) IBOutlet UIButton *testButton;
+
 @end
 
 @implementation ViewController
@@ -25,5 +28,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)testButtonTapped:(id)sender {
+    self.testLabel.text = @"It worked!";
+}
 
 @end
