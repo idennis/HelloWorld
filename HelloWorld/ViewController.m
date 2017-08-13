@@ -29,7 +29,20 @@
 }
 
 - (IBAction)testButtonTapped:(id)sender {
-    self.testLabel.text = @"It worked!";
+    int height_feet = 5;
+    int height_inches = 11; // 5'11"
+    
+    // 1 feet = 12 inches, 1 inch = 2.54 cm
+    double height_cm = ((height_feet * 12) + height_inches)* 2.54;
+    
+    if (height_cm > 200){
+        self.testLabel.text = @"You're over 2 meters tall!";
+    }
+    else{
+        self.testLabel.text = @"You're under 2 meters tall!";
+    }
+    
+    self.testLabel.text = [NSString stringWithFormat:@"%f", height_cm];
 }
 
 @end
